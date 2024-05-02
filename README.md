@@ -1,22 +1,24 @@
 # LIIFusion
-### Efficient and Realistic Image Super-Resolution for Arbitrary Scale
+## Efficient and Realistic Image Super-Resolution for Arbitrary Scale
 
 Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/Zj-BinXia/DiffIR), and [IDM](https://github.com/Ree1s/IDM), we fuse INR and latent diffusion for arbitrary scale, efficient and realistic image SR. Our model needs two stage training. At the first stage, our model learns how to encode a prior from a HR image. By injecting the prior to a latent representation of a LR image, LIIF can upsample the LR image more correctly. At the second stage, the prior encoding module is replaced to diffusion module. We expect that by sampling the prior from the diffusion module, we can generate plausible details for SR images. Besides, as we conduct the diffusion prcoess on a prior, we can reduce computational cost and the number of denoising step than IDM. To alleviate over-smoothing problem, we give GAN loss to our model. Quantiative and qualitative results are as follows. 
 
+### Quantitiave Results
+
 * #### Comparison with fixed scale diffusion models
-<img width="954" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/2b5df0d0-a0b4-4c47-a6e0-069b3f0e043a>
+  <img width="850" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/2b5df0d0-a0b4-4c47-a6e0-069b3f0e043a>
 
 * #### Comparison with IDM
-<img width="954" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/9160df33-e19c-4f79-b173-947c8ba44237>
+  <img width="650" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/9160df33-e19c-4f79-b173-947c8ba44237>
 
-
+### Qualitative Results
 
 * #### Stage 2 DIV2K
-<img width="954" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/1629de81-ca1f-4cf3-980d-3e57f020c72d>
+  <img width="954" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/1629de81-ca1f-4cf3-980d-3e57f020c72d>
 
 
 * #### Stage 2 B100
-<img width="954" alt="srage2_2" src=https://github.com/novwaul/LIIFusion/assets/53179332/389b8e3e-c4cd-4f93-b83c-531f9ffd8b39>
+  <img width="954" alt="srage2_2" src=https://github.com/novwaul/LIIFusion/assets/53179332/389b8e3e-c4cd-4f93-b83c-531f9ffd8b39>
 
 
 ### Data
