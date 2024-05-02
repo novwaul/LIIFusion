@@ -1,14 +1,16 @@
 # LIIFusion
 ### Efficient and Realistic Image Super-Resolution for Arbitrary Scale
 
-Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/Zj-BinXia/DiffIR), and [IDM](https://github.com/Ree1s/IDM), we fuse INR and latent diffusion for arbitrary scale, efficient and realistic image SR. Our model needs two stage training. At the first stage, our model learns how to encode a prior from a HR image. By injecting the prior to a latent representation of a LR image, LIIF can upsample the LR image more correctly. At the second stage, the prior encoding module is replaced to diffusion module. We expect that by sampling the prior from the diffusion module, we can generate plausible details for SR images. Besides, as we conduct the diffusion prcoess on a prior, we can reduce computational cost and the number of denoising step than IDM. To alleviate over-smoothing problem, we give GAN loss to our model. Qualitative results are as follows. For more details, please refer to our **Report.pdf** and **Presentation.pdf** files in Docs folder.
+Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/Zj-BinXia/DiffIR), and [IDM](https://github.com/Ree1s/IDM), we fuse INR and latent diffusion for arbitrary scale, efficient and realistic image SR. Our model needs two stage training. At the first stage, our model learns how to encode a prior from a HR image. By injecting the prior to a latent representation of a LR image, LIIF can upsample the LR image more correctly. At the second stage, the prior encoding module is replaced to diffusion module. We expect that by sampling the prior from the diffusion module, we can generate plausible details for SR images. Besides, as we conduct the diffusion prcoess on a prior, we can reduce computational cost and the number of denoising step than IDM. To alleviate over-smoothing problem, we give GAN loss to our model. Qualitative results are as follows. 
 
 
 * #### Stage 2 DIV2K
-<img width="954" alt="stage2" src="https://github.com/novwaul/LIIFusion/assets/53179332/a2e817c0-604a-4380-99e4-ac33520aebb6">
+<img width="954" alt="stage2" src=https://github.com/novwaul/LIIFusion/assets/53179332/1629de81-ca1f-4cf3-980d-3e57f020c72d>
+
 
 * #### Stage 2 B100
-<img width="954" alt="srage2_2" src="https://github.com/novwaul/LIIFusion/assets/53179332/e1ffc51a-8445-40a0-bd38-078dd86169fa">
+<img width="954" alt="srage2_2" src=https://github.com/novwaul/LIIFusion/assets/53179332/389b8e3e-c4cd-4f93-b83c-531f9ffd8b39>
+
 
 ### Data
 We use **DIV2K** and **Benchmark**. The **Benchmark** includes **Set5**, **Set14**, **Urban100**, and **B100**.
