@@ -172,8 +172,8 @@ def train_stage2(train_loader, model, discriminator, m_optimizer, d_optimizer, p
 
         pred = pred.clamp(min=0.0, max=1.0)
         
-        fake_out = discriminator(pred)
-        real_out = discriminator(gt)
+        fake_out = discriminator(pred - gt.mean()) # hinder discriminator to become superior than generator
+        real_out = discriminator(gt - pred.mean())
         l_fake = adv_fn(fake_out, real_lbl) * 5e-2 # gan loss 1
         l_real = adv_fn(real_out, fake_lbl) * 5e-2 # gan loss 2
         
@@ -196,8 +196,8 @@ def train_stage2(train_loader, model, discriminator, m_optimizer, d_optimizer, p
         discriminator.zero_grad()
         
         pred = pred.detach()
-        fake_out = discriminator(pred)
-        real_out = discriminator(gt)
+        fake_out = discriminator(pred - gt.mean())
+        real_out = discriminator(gt - pred.mean())
         
         d_fake = adv_fn(fake_out, fake_lbl)
         d_real = adv_fn(real_out, real_lbl)
