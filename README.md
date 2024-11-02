@@ -5,7 +5,8 @@ Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/
 ## Quantitative Results
 
 * #### DIV2K
-  
+  <img width="898" alt="스크린샷 2024-11-03 오전 12 01 41" src="https://github.com/user-attachments/assets/70c464cd-5825-4a28-b5f0-b19c6b1530d7">
+
 * #### Benchmarks
   <img width="741" alt="스크린샷 2024-11-02 오후 11 56 55" src="https://github.com/user-attachments/assets/0258b98a-90cf-4a78-b194-58f28fc044c6">
 
