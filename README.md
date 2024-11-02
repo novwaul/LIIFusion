@@ -5,8 +5,7 @@ Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/
 ## Quantitative Results
 
 * #### DIV2K
-  <img width="896" alt="스크린샷 2024-11-02 오후 11 56 18" src="https://github.com/user-attachments/assets/f9d69a8f-3e5d-445e-a023-10a503e0a3d9">
-
+  
 * #### Benchmarks
   <img width="741" alt="스크린샷 2024-11-02 오후 11 56 55" src="https://github.com/user-attachments/assets/0258b98a-90cf-4a78-b194-58f28fc044c6">
 
@@ -31,7 +30,7 @@ Inspired by [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/
 
 
 ### Data
-We use **DIV2K** and **Benchmark**. The **Benchmark** includes **Set5**, **Set14**, **Urban100**, and **B100**.
+We use **DIV2K**, **FFHQ**, **CelebA-HQ** and **Benchmark**. The **Benchmark** includes **Set5**, **Set14**, **Urban100**, and **B100**.
 `mkdir load` for putting the dataset folders.
 
 ### How to train 
