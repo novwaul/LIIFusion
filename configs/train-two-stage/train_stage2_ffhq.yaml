@@ -1,0 +1,71 @@
+train_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./load/ffhq
+      repeat: 1
+      cache: in_memory
+  wrapper:
+    name: sr-implicit-downsampled
+    args:
+      inp_size: 16
+      scale_max: 8
+      augment: true
+      sample_patch: true
+      batch_size: 32
+  batch_size: 1
+
+val_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./load/celeba_hq
+      first_k: 10
+      repeat: 160
+      cache: in_memory
+  wrapper:
+    name: sr-implicit-downsampled
+    args:
+      inp_size: 32
+      scale_max: 8
+      sample_patch: true
+      batch_size: 16
+  batch_size: 1
+
+data_norm:
+  inp: {sub: [0.5], div: [0.5]}
+  gt: {sub: [0.5], div: [0.5]}
+
+model:
+  name: liifusion_stage2
+  args:
+    encoder_spec:
+      name: edsr-baseline
+      args:
+        no_upsampling: true
+    imnet_spec:
+      name: mlp
+      args:
+        out_dim: 3
+        hidden_list: [256, 256, 256, 256]
+
+discriminator:
+  name: discriminator
+  args:
+    num_in_ch: 3
+
+m_optimizer:
+  name: adam
+  args:
+    lr: 3.e-5
+
+d_optimizer:
+  name: adam
+  args:
+    lr: 3.e-5
+
+epoch_max: 1000
+epoch_val: 1
+epoch_save: 100
+mode: stage2
+pretrained: /home/kaist/inje/LIIFusion/save/face/epoch-last.pth
