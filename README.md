@@ -36,18 +36,18 @@ We use **DIV2K**, **FFHQ**, **CelebA-HQ** and **Benchmark**. The **Benchmark** i
 
 ### How to train 
 * Stage1
-<pre><code>python train.py --config /home/kaist2/Desktop/LIIFusion/configs/train-two-stage/train_stage1.yaml</pre></code>
+  <pre><code>python train.py --config [path-to-config]</pre></code>
 * Stage2
-<pre><code>python train.py --config /home/kaist2/Desktop/LIIFusion/configs/train-two-stage/train_stage2.yaml</pre></code>
+  <pre><code>python train.py --config [path-to-config]</pre></code>
 ### How to test
 * DIV2K
-<pre><code>bash scripts/test-div2k.sh [MODEL_PATH] [GPU]</pre></code>
+  <pre><code>bash scripts/test-div2k.sh [MODEL_PATH] [GPU]</pre></code>
 * Benchmark
-<pre><code>bash scripts/test-benchmark.sh [MODEL_PATH] [GPU] </pre></code>
+  <pre><code>bash scripts/test-benchmark.sh [MODEL_PATH] [GPU] </pre></code>
 * CelebA-HA(1-100 images)
--TODO
+  <pre><code>bash scripts/test-celebahq.sh [MODEL_PATH] [GPU] </pre></code>
 ### How to upsample an image
-<pre><code> python demo.py --input [IMAGE_PATH] --model [MODEL_PATH] --scale [SCALE_NUM]</pre></code>
+  <pre><code> python demo.py --input [IMAGE_PATH] --model [MODEL_PATH] --scale [SCALE_NUM]</pre></code>
 
 ### Acknowledgement
 This code is based on these [LIIF](https://github.com/yinboc/liif), [DiffIR](https://github.com/Zj-BinXia/DiffIR), and [SwinIR](https://github.com/novwaul/SwinIR) repos.
